@@ -1,0 +1,21 @@
+metric: VOC
+map_type: 11point
+num_classes: 9
+
+TrainDataset:
+  !VOCDataSet
+    dataset_dir: F:\数据集\VOC数据集\危化品标志检测数据集
+    anno_path: train.txt
+    label_list: label_list.txt
+    data_fields: ['image', 'gt_bbox', 'gt_class', 'difficult']
+
+EvalDataset:
+  !VOCDataSet
+    dataset_dir: F:\数据集\VOC数据集\危化品标志检测数据集
+    anno_path: test.txt
+    label_list: label_list.txt
+    data_fields: ['image', 'gt_bbox', 'gt_class', 'difficult']
+
+TestDataset:
+  !ImageFolder
+    anno_path: dataset/voc/label_list.txt
